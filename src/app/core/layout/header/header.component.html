@@ -1,1 +1,42 @@
-<p>header works!</p>
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item pt-1" (click)="navigateTo('home')">
+      <h1 class="title is-4">Sports App</h1>
+    </a>
+
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-start">
+      <a class="navbar-item" (click)="navigateTo('home')">
+        Home
+      </a>
+
+      <a class="navbar-item" (click)="navigateTo('products')">
+        Products
+      </a>
+
+      <a class="navbar-item" (click)="navigateTo('about')">
+        About
+      </a>
+    </div>
+
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+          <a class="button is-secondary" (click)="navigateTo('cart')">
+            <strong>See cart</strong>
+          </a>
+          <a class="button is-primary" (click)="navigateTo('cart')">
+            <strong>Check out</strong>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

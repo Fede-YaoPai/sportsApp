@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './layout/header/header.component';
 import { FooterComponent } from './layout/footer/footer.component';
 
+
 const layoutComponents = [
   HeaderComponent,
   FooterComponent
@@ -16,3 +17,5 @@ const layoutComponents = [
   exports: [...layoutComponents]
 })
 export class CoreModule { }
+
+

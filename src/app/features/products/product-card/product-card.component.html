@@ -1,0 +1,27 @@
+<div class="card" *ngIf="product; let p">
+  <header class="card-header">
+    <p class="card-header-title is-flex is-justify-content-space-between">
+      <span>
+        {{ p.name }}
+      </span>
+      <span>
+        <span class="tag is-danger" *ngIf="p.onPromotion">!</span>
+        € {{ p.price }}
+      </span>
+    </p>
+  </header>
+  <div class="card-image">
+    <figure class="image is-4by3">
+      <img [src]="'assets/img/' + p.name + '.jpg'" [alt]="'Image of product: ' + p.name">
+    </figure>
+  </div>
+  <div class="card-content">
+    <div class="content">
+      {{ p.description }}
+    </div>
+  </div>
+  <footer class="card-footer">
+    <a role="button" class="card-footer-item" (click)="seeProductDetail(p)">See details</a>
+    <a role="button" class="card-footer-item" (click)="addProductToCart(p)">Add to cart</a>
+  </footer>
+</div>

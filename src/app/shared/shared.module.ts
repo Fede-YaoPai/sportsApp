@@ -4,12 +4,14 @@ import { ApplyButtonComponent } from './components/apply-button/apply-button.com
 import { CancelButtonComponent } from './components/cancel-button/cancel-button.component';
 import { LoginFormComponent } from './components/login-form/login-form.component';
 import { MainNavbarComponent } from './components/main-navbar/main-navbar.component';
+import { ProgressBarComponent } from './components/progress-bar/progress-bar.component';
 
 const sharedComponents = [
   ApplyButtonComponent,
   CancelButtonComponent,
   LoginFormComponent,
-  MainNavbarComponent
+  MainNavbarComponent,
+  ProgressBarComponent
 ];
 
 @NgModule({

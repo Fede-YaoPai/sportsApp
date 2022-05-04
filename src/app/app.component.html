@@ -3,9 +3,16 @@
     <app-header></app-header>
   </header>
   <main>
-    <router-outlet></router-outlet>
+    <router-outlet *ngIf="!loading; else progress"></router-outlet>
   </main>
   <footer>
     <app-footer></app-footer>
   </footer>
 </div>
+
+<ng-template #progress>
+  <div class="container">
+    <h6 class="title is-6">Loading...</h6>
+    <progress class="progress is-small is-primary" max="100">15%</progress>
+  </div>
+</ng-template>

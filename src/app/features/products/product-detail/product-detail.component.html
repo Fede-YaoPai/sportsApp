@@ -1,0 +1,49 @@
+<div class="container">
+  <ng-container *ngIf="(product$ | async); let p; else loading">
+    <h2 class="title is-4">Details for {{ p.name }}</h2>
+
+    <div class="block">
+      <p>
+        <span class="has-text-weight-bold">
+          Category:
+        </span> {{ getProductCategory(p) }}
+      </p>
+    </div>
+    <div class="block">
+      <p>
+        <span class="has-text-weight-bold">
+          Made in:
+        </span> {{ p.madeIn }}
+      </p>
+    </div>
+    <div class="block">
+      <p>
+        <span class="has-text-weight-bold">
+          Made on:
+        </span> {{ p.madeOn | date }}
+      </p>
+    </div>
+    <div class="block">
+      <p>
+        <span class="has-text-weight-bold">
+          Price:
+        </span> € {{ p.price }}
+      </p>
+    </div>
+    <div class="block">
+      <p>
+        <span class="has-text-weight-bold">
+          Promotion:
+        </span> This product is {{ p.onPromotion ? '' : 'NOT' }} on promotion {{ p.onPromotion ? '!' : '' }}
+      </p>
+    </div>
+    <div class="block">
+      <p class="has-text-weight-bold">Description: </p>
+      <p>{{ p.description }}</p>
+    </div>
+  </ng-container>
+</div>
+
+<ng-template #loading>
+  <app-progress-bar text="Loading product detail..."></app-progress-bar>
+</ng-template>
