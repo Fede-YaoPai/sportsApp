@@ -1,46 +1,56 @@
 <div class="container">
   <ng-container *ngIf="(product$ | async); let p; else loading">
-    <h2 class="title is-4">Details for {{ p.name }}</h2>
+    <h2 class="title is-4 pb-4">Details for {{ p.name }}</h2>
+    <div class="columns box" style="height: 420px;">
+      <div class="column is-half">
 
-    <div class="block">
-      <p>
-        <span class="has-text-weight-bold">
-          Category:
-        </span> {{ getProductCategory(p) }}
-      </p>
+        <div class="is-height-100">
+          <div class="block">
+            <p>
+              <span class="has-text-weight-bold">
+                Category:
+              </span> {{ getProductCategory(p) }}
+            </p>
+          </div>
+          <div class="block">
+            <p>
+              <span class="has-text-weight-bold">
+                Made in:
+              </span> {{ p.madeIn }}
+            </p>
+          </div>
+          <div class="block">
+            <p>
+              <span class="has-text-weight-bold">
+                Made on:
+              </span> {{ p.madeOn | date }}
+            </p>
+          </div>
+          <div class="block">
+            <p>
+              <span class="has-text-weight-bold">
+                Price:
+              </span> € {{ p.price }}
+            </p>
+          </div>
+          <div class="block">
+            <p>
+              <span class="has-text-weight-bold">
+                Promotion:
+              </span> This product is {{ p.onPromotion ? '' : 'NOT' }} on promotion {{ p.onPromotion ? '!' : '.' }}
+            </p>
+          </div>
+          <div class="block">
+            <p class="has-text-weight-bold">Description: </p>
+            <p>{{ p.description }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="column is-half">
+        <img [src]="'assets/img/' + p.name + '.jpg'" [alt]="'Image of product: ' + p.name" class="box p-0 is-height-100 is-pulled-right is-shadowless">
+      </div>
     </div>
-    <div class="block">
-      <p>
-        <span class="has-text-weight-bold">
-          Made in:
-        </span> {{ p.madeIn }}
-      </p>
-    </div>
-    <div class="block">
-      <p>
-        <span class="has-text-weight-bold">
-          Made on:
-        </span> {{ p.madeOn | date }}
-      </p>
-    </div>
-    <div class="block">
-      <p>
-        <span class="has-text-weight-bold">
-          Price:
-        </span> € {{ p.price }}
-      </p>
-    </div>
-    <div class="block">
-      <p>
-        <span class="has-text-weight-bold">
-          Promotion:
-        </span> This product is {{ p.onPromotion ? '' : 'NOT' }} on promotion {{ p.onPromotion ? '!' : '' }}
-      </p>
-    </div>
-    <div class="block">
-      <p class="has-text-weight-bold">Description: </p>
-      <p>{{ p.description }}</p>
-    </div>
+
   </ng-container>
 </div>
 

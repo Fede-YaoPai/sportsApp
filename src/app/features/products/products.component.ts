@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { ProductsService } from 'src/app/core/services/products.service';
 import { Product, ProductCategory } from 'src/app/models/products.models';
+import { ProductCardComponent } from './product-card/product-card.component';
 
 @Component({
   selector: 'app-products',

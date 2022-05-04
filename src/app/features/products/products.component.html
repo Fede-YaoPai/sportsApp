@@ -3,8 +3,9 @@
 
   <div class="columns is-multiline">
     <ng-container *ngIf="products.length; else loading">
-      <div *ngFor="let product of products" class="column is-3">
+      <div *ngFor="let product of products; let i = index;" class="column is-3">
         <app-product-card
+          #productCard
           [product]="product"
           (onSeeProductDetail)="seeProductDetail($event)"
           (onAddProductToCart)="addProductToCart($event)">
@@ -15,28 +16,14 @@
 </div>
 
 <ng-template #loading>
-  <div class="column is-12">
-    <app-progress-bar text="Loading products..."></app-progress-bar>
+  <div class="column is-full">
+    <app-progress-bar
+      text="Loading products...">
+    </app-progress-bar>
   </div>
 </ng-template>
 
-<div *ngIf="productVisible">
-  <p>Product name: {{ product.name }}</p>
-  <p>Product price: {{ product.price }}</p>
-  <p>Made in: {{ product.madeIn }}</p>
 
-  <div [ngSwitch]="product.category">
-    <p *ngSwitchCase="productCategory.Boxe">
-      This is a Boxing item
-    </p>
-    <p *ngSwitchCase="productCategory.Kickboxing">
-      This is a Kickboxing item
-    </p>
-    <p *ngSwitchCase="productCategory.MMA">
-      This is an MMA item
-    </p>
-  </div>
-</div>
 
 
 
