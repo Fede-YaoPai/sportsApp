@@ -5,6 +5,9 @@ import { CancelButtonComponent } from './components/cancel-button/cancel-button.
 import { LoginFormComponent } from './components/login-form/login-form.component';
 import { MainNavbarComponent } from './components/main-navbar/main-navbar.component';
 import { ProgressBarComponent } from './components/progress-bar/progress-bar.component';
+import { FirstUppercasePipe } from './pipes/first-uppercase.pipe';
+import { TakeCharsFromPipe } from './pipes/take-chars-from.pipe';
+
 
 const sharedComponents = [
   ApplyButtonComponent,
@@ -14,11 +17,16 @@ const sharedComponents = [
   ProgressBarComponent
 ];
 
+const sharedPipes = [
+  FirstUppercasePipe,
+  TakeCharsFromPipe
+]
+
 @NgModule({
-  declarations: [...sharedComponents],
+  declarations: [...sharedComponents, sharedPipes],
   imports: [
     CommonModule
   ],
-  exports: [...sharedComponents]
+  exports: [...sharedComponents, sharedPipes]
 })
 export class SharedModule { }

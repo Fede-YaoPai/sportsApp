@@ -9,3 +9,16 @@
   </div>
 </div>
 
+<ng-template #test let-products="productsCount" let-cartProducts="cartProductsCount">
+  <div class="container">
+    <p>
+      Available products: {{ products }}
+    </p>
+    <p>
+      Cart products: {{ cartProducts }}
+    </p>
+  </div>
+</ng-template>
+
+<ng-container *ngTemplateOutlet="test; context: ctx"></ng-container>
+

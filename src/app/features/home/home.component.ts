@@ -9,6 +9,11 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
+  public ctx = {
+    productsCount: 6,
+    cartProductsCount: 12
+  };
+
   constructor(private router: Router) { }
 
   ngOnInit(): void {
