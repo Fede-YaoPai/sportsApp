@@ -1,24 +1,24 @@
 <div class="container">
   <div class="block">
-    <h2 class="title is-4">Welcome to Sports App!</h2>
-    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloribus aspernatur aut nihil voluptatum esse, laboriosam nostrum possimus itaque fugit aliquid illo officiis id, magni saepe fugiat reprehenderit. Voluptatum necessitatibus facere similique consequatur alias minima, tempore nisi, beatae non sequi magnam adipisci quisquam quam quos minus optio praesentium, corporis explicabo mollitia modi suscipit perspiciatis corrupti! Excepturi illo aliquam atque numquam. Quis placeat ipsum a aspernatur quae excepturi harum sit vero consequatur, id beatae alias perferendis soluta deserunt, natus itaque possimus architecto ducimus reiciendis totam saepe est. Quam, nesciunt quisquam odit eveniet non eos quibusdam provident rerum consequuntur animi dolorem beatae, quod ducimus delectus modi quis explicabo repellat dolorum excepturi facilis. Et, nisi? Expedita culpa ducimus nisi? Distinctio optio corrupti impedit quasi, autem sed! Obcaecati ipsam corrupti assumenda saepe fuga, nesciunt earum repellendus id cupiditate, sapiente qui perspiciatis vero velit a iusto ducimus consectetur perferendis consequuntur amet dolor esse eaque molestias debitis. Velit sed cupiditate atque perferendis rerum magnam impedit, consectetur recusandae asperiores assumenda molestias eaque ipsum dolore sunt consequuntur ullam voluptate nostrum nesciunt numquam veritatis eveniet, excepturi odit doloremque. Eaque officiis rem soluta ullam quo! Eius odio, est voluptatum cum quisquam aliquam voluptates? Debitis possimus eum ipsa. Amet placeat possimus magnam.</p>
+    <h2 #title class="title is-4">Welcome to the Sports App!</h2>
+    <p>Lorem ipsum, dolor sit amet...</p>
   </div>
 
   <div class="block">
-    <button class="button is-primary" (click)="goToProducts()">See our products</button>
+    <span class="mr-3" *ngFor="let b of navigateButtons">
+      <app-navigate-button
+        [navigateTo]="b.navigateTo"
+        [buttonText]="b.buttonText"
+        [buttonClass]="b.buttonClass">
+      </app-navigate-button>
+    </span>
   </div>
 </div>
 
-<ng-template #test let-products="productsCount" let-cartProducts="cartProductsCount">
-  <div class="container">
-    <p>
-      Available products: {{ products }}
-    </p>
-    <p>
-      Cart products: {{ cartProducts }}
-    </p>
-  </div>
-</ng-template>
+<!-- <input #fileInput type="file">
+<input type="text"> -->
 
-<ng-container *ngTemplateOutlet="test; context: ctx"></ng-container>
+<app-file-uploader></app-file-uploader>
+
+
 

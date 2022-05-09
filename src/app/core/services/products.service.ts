@@ -25,11 +25,11 @@ export class ProductsService {
   }
 
   public getAll(): Observable<Product[]> {
-    return this.http.get<Product[]>(`https://60d340e6858b410017b2f4b9.mockapi.io/api/products`).pipe(delay(1500));
+    return this.http.get<Product[]>(`api/products`).pipe(delay(1500));
   }
 
   public getById(id: string): Observable<Product> {
-    return this.http.get<Product>(`https://60d340e6858b410017b2f4b9.mockapi.io/api/products/${id}`).pipe(delay(1500));
+    return this.http.get<Product>(`api/products/${id}`).pipe(delay(1500));
   }
 
   public addToCart(product: Product): void {

@@ -7,6 +7,11 @@ import { MainNavbarComponent } from './components/main-navbar/main-navbar.compon
 import { ProgressBarComponent } from './components/progress-bar/progress-bar.component';
 import { FirstUppercasePipe } from './pipes/first-uppercase.pipe';
 import { TakeCharsFromPipe } from './pipes/take-chars-from.pipe';
+import { NavigateButtonComponent } from './components/navigate-button/navigate-button.component';
+import { FileUploaderComponent } from './components/file-uploader/file-uploader.component';
+import { FileUploadDirective } from './directives/file-upload.directive';
+import { HoverPopupDirective } from './directives/hover-popup.directive';
+
 
 
 const sharedComponents = [
@@ -14,19 +19,26 @@ const sharedComponents = [
   CancelButtonComponent,
   LoginFormComponent,
   MainNavbarComponent,
-  ProgressBarComponent
+  ProgressBarComponent,
+  NavigateButtonComponent,
+  FileUploaderComponent
 ];
 
 const sharedPipes = [
   FirstUppercasePipe,
   TakeCharsFromPipe
-]
+];
+
+const sharedDirectives = [
+  FileUploadDirective,
+  HoverPopupDirective
+];
 
 @NgModule({
-  declarations: [...sharedComponents, sharedPipes],
+  declarations: [...sharedComponents, sharedPipes, sharedDirectives],
   imports: [
     CommonModule
   ],
-  exports: [...sharedComponents, sharedPipes]
+  exports: [...sharedComponents, sharedPipes,sharedDirectives]
 })
 export class SharedModule { }

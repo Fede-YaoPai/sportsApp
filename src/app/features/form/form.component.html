@@ -1,0 +1,18 @@
+<form>
+  <div class="block">
+    <label class="is-block">Country of origin</label>
+    <select>
+      <option *ngFor="let c of selects.country" [value]="c.value">
+        {{ c.label }}
+      </option>
+    </select>
+  </div>
+  <div class="block">
+    <label class="is-block">Civil status</label>
+    <select>
+      <option *ngFor="let cs of selects.civilStatus" [value]="cs.value">
+        {{ cs.label }}
+      </option>
+    </select>
+  </div>
+</form>

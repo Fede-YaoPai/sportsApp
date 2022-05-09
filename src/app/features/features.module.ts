@@ -7,6 +7,7 @@ import { ProductDetailComponent } from './products/product-detail/product-detail
 import { FormsModule } from '@angular/forms';
 import { ProductCardComponent } from './products/product-card/product-card.component';
 import { SharedModule } from '../shared/shared.module';
+import { FormComponent } from './form/form.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { SharedModule } from '../shared/shared.module';
     ProductsComponent,
     ProductDetailComponent,
     ProductCardComponent,
-    ProductCardComponent
+    ProductCardComponent,
+    FormComponent
   ],
   imports: [
     CommonModule,
