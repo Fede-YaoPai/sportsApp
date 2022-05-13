@@ -11,6 +11,7 @@ import { NavigateButtonComponent } from './components/navigate-button/navigate-b
 import { FileUploaderComponent } from './components/file-uploader/file-uploader.component';
 import { FileUploadDirective } from './directives/file-upload.directive';
 import { HoverPopupDirective } from './directives/hover-popup.directive';
+import { RedOnHoverDirective } from './directives/red-on-hover.directive';
 
 
 
@@ -31,7 +32,8 @@ const sharedPipes = [
 
 const sharedDirectives = [
   FileUploadDirective,
-  HoverPopupDirective
+  HoverPopupDirective,
+  RedOnHoverDirective
 ];
 
 @NgModule({

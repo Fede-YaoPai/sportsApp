@@ -13,12 +13,15 @@
       </app-navigate-button>
     </span>
   </div>
+
+  <small appRedOnHover>Hover me!</small>
 </div>
 
-<!-- <input #fileInput type="file">
-<input type="text"> -->
-
 <app-file-uploader></app-file-uploader>
+
+<div [formGroup]="form" (click)="logForm()">
+  <input type="text" formControlName="name">
+</div>
 
 
 

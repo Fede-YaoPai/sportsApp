@@ -12,7 +12,7 @@ export class HoverPopupDirective {
 
   constructor(private renderer: Renderer2, private el: ElementRef) {
     this.initElements();
-   }
+  }
 
   @HostListener('mouseover', ['$event'])
   onInputMouseOver(e: MouseEvent) {

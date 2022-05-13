@@ -4,7 +4,7 @@ import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
 import { ProductsComponent } from './products/products.component';
 import { ProductDetailComponent } from './products/product-detail/product-detail.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProductCardComponent } from './products/product-card/product-card.component';
 import { SharedModule } from '../shared/shared.module';
 import { FormComponent } from './form/form.component';
@@ -23,6 +23,7 @@ import { FormComponent } from './form/form.component';
   imports: [
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     SharedModule
   ]
 })

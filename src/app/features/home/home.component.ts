@@ -1,7 +1,9 @@
 import { AfterViewInit, Component, ComponentRef, ElementRef, HostListener, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { NavigateButton } from 'src/app/models/navigate-button.models';
 import { NavigateButtonComponent } from 'src/app/shared/components/navigate-button/navigate-button.component';
+import { passwordStrengthValidator } from 'src/app/shared/utilities/custom-validators';
 
 
 @Component({
@@ -12,21 +14,8 @@ import { NavigateButtonComponent } from 'src/app/shared/components/navigate-butt
 export class HomeComponent implements OnInit, AfterViewInit {
 
   @ViewChild('title') title!: ElementRef;
-  //@ViewChild('fileInput') fileInput!: ElementRef;
   @ViewChild(NavigateButtonComponent) button!: ComponentRef<NavigateButtonComponent>;
   @ViewChildren(NavigateButtonComponent) buttons!: QueryList<NavigateButtonComponent>;
-
-  // @HostListener('window:click', ['$event'])
-  // test(e: MouseEvent) {
-  //   console.log('Window clicked! Event: ', e);
-  // }
-
-  // @HostListener('change', ['$event.target.files'])
-  // onFileInput(files: FileList) {
-  //   const file: File | null = files.item(0);
-
-  //   if (file) this.logFileInput(file);
-  // }
 
   public ctx = {
     productsCount: 6,
@@ -51,15 +40,24 @@ export class HomeComponent implements OnInit, AfterViewInit {
     },
   ];
 
-  constructor(private router: Router) { }
+  public form: FormGroup = this.fb.group({
+    name: [null, {
+      validators: [Validators.required, passwordStrengthValidator()]
+    }]
+  })
+
+  constructor(private router: Router, private fb: FormBuilder) { }
 
   ngOnInit(): void {
-
   }
 
   ngAfterViewInit(): void {
     let title: HTMLElement = this.title.nativeElement as HTMLElement;
     let buttons: NavigateButtonComponent[] = this.buttons.toArray();
+  }
+
+  public logForm(): void {
+    console.log('form ->', this.form);
   }
 
   public goToProducts(): void {
