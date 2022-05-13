@@ -22,3 +22,4 @@ export const passwordStrengthValidator = (): ValidatorFn => {
     return passwordIsValid ? null : validationErrors;
   }
 }
+

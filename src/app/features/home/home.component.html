@@ -14,14 +14,22 @@
     </span>
   </div>
 
-  <small appRedOnHover>Hover me!</small>
+  <div class="block">
+    <small appRedOnHover>Hover me!</small>
+  </div>
+
+  <div class="block">
+    <app-file-uploader></app-file-uploader>
+  </div>
+
+  <div class="block">
+    <div [formGroup]="form" (click)="logForm()">
+      <input type="text" formControlName="name">
+    </div>
+  </div>
 </div>
 
-<app-file-uploader></app-file-uploader>
 
-<div [formGroup]="form" (click)="logForm()">
-  <input type="text" formControlName="name">
-</div>
 
 
 

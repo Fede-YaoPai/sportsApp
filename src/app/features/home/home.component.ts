@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ComponentRef, ElementRef, HostListener, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
+import { AfterViewInit, Component, ComponentRef, ElementRef, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { NavigateButton } from 'src/app/models/navigate-button.models';
@@ -38,17 +38,15 @@ export class HomeComponent implements OnInit, AfterViewInit {
       buttonText: 'Contact us',
       buttonClass: 'button is-info'
     },
+
   ];
 
-  public form: FormGroup = this.fb.group({
-    name: [null, {
-      validators: [Validators.required, passwordStrengthValidator()]
-    }]
-  })
+  public form!: FormGroup;
 
   constructor(private router: Router, private fb: FormBuilder) { }
 
   ngOnInit(): void {
+    this.initForm();
   }
 
   ngAfterViewInit(): void {
@@ -56,8 +54,16 @@ export class HomeComponent implements OnInit, AfterViewInit {
     let buttons: NavigateButtonComponent[] = this.buttons.toArray();
   }
 
+  private initForm(): void {
+    this.form = this.fb.group({
+      name: [null, {
+        validators: [Validators.required, passwordStrengthValidator()]
+      }]
+    })
+  }
+
   public logForm(): void {
-    console.log('form ->', this.form);
+    console.log('form control ->', this.form.controls['name']);
   }
 
   public goToProducts(): void {

@@ -18,7 +18,7 @@ export class FileUploadDirective {
 
     if (inputFile) {
       // call server...
-      console.log('calling server to upload file...');
+      console.log('calling server to upload file...', inputFile);
     }
   }
 }
