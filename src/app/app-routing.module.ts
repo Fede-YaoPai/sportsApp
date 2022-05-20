@@ -19,8 +19,7 @@ const routes: Routes = [
   {
     path: 'form',
     component: FormComponent,
-    canDeactivate: [DeactivateFormGuard],
-    resolve: {formSelects: FormResolver}
+    canDeactivate: [DeactivateFormGuard]
   },
   {path: 'about', component: AboutComponent},
   {

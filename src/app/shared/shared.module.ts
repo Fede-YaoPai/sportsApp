@@ -12,6 +12,9 @@ import { FileUploaderComponent } from './components/file-uploader/file-uploader.
 import { FileUploadDirective } from './directives/file-upload.directive';
 import { HoverPopupDirective } from './directives/hover-popup.directive';
 import { RedOnHoverDirective } from './directives/red-on-hover.directive';
+import { TemplateDrivenFormComponent } from './components/template-driven-form/template-driven-form.component';
+import { ReactiveFormComponent } from './components/reactive-form/reactive-form.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -22,7 +25,9 @@ const sharedComponents = [
   MainNavbarComponent,
   ProgressBarComponent,
   NavigateButtonComponent,
-  FileUploaderComponent
+  FileUploaderComponent,
+  TemplateDrivenFormComponent,
+  ReactiveFormComponent
 ];
 
 const sharedPipes = [
@@ -39,7 +44,8 @@ const sharedDirectives = [
 @NgModule({
   declarations: [...sharedComponents, sharedPipes, sharedDirectives],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
   ],
   exports: [...sharedComponents, sharedPipes,sharedDirectives]
 })

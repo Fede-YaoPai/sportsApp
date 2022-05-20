@@ -14,12 +14,12 @@ export class FormComponent implements OnInit {
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.setFormSelects()
+    //this.setFormSelects()
   }
 
   private setFormSelects(): void {
-    let selects: FormSelects = this.route.snapshot.data['formSelects'][0];
-    this.selects = selects;
+    // let selects: FormSelects = this.route.snapshot.data['formSelects'][0];
+    // this.selects = selects;
   }
 
   public formSaved(): boolean {

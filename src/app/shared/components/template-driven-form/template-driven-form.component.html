@@ -1,0 +1,60 @@
+<div class="d-flex is-justify-content-center">
+  <form #productForm="ngForm">
+    <div class="field">
+      <label class="label">Name</label>
+      <div class="control">
+        <input
+          class="input"
+          type="text"
+          [(ngModel)]="product.name"
+          name="name">
+      </div>
+    </div>
+    <div class="field">
+      <label class="label">Category</label>
+      <div class="select">
+        <select [(ngModel)]="product.category" name="category">
+          <option
+            *ngFor="let category of getCategories(productCategory | keyvalue)"
+            [value]="category.key">
+            {{ category.value }}
+          </option>
+        </select>
+      </div>
+    </div>
+    <div class="field">
+      <label class="label">Price</label>
+      <div class="control">
+        <input class="input" type="number">
+      </div>
+    </div>
+    <div class="field">
+      <label class="label">Made in</label>
+      <div class="select">
+        <select>
+          <option *ngFor="let country of countries">
+            {{ country }}
+          </option>
+        </select>
+      </div>
+    </div>
+    <div class="field">
+      <label class="label">Made on</label>
+      <div class="control">
+        <input class="input" type="date">
+      </div>
+    </div>
+    <div class="field">
+      <label class="checkbox">
+        <input type="checkbox">
+        On promotion
+      </label>
+    </div>
+    <div class="field">
+      <label class="label">Description</label>
+      <div class="control">
+        <textarea class="textarea" rows="5"></textarea>
+      </div>
+    </div>
+  </form>
+</div>
