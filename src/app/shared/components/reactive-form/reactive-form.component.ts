@@ -36,10 +36,10 @@ export class ReactiveFormComponent implements OnInit {
       password: ['', {validators: [Validators.required], asyncValidators: [], updateOn: 'blur'}],
 
       address: this.fb.group({
-        country: [],
-        city: [],
-        street: [],
-        number: []
+        country: [''],
+        city: [''],
+        street: [''],
+        number: ['']
       })
     });
   }
