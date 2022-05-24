@@ -3,6 +3,6 @@
     <input type="text" formControlName="username">
     <input type="email" formControlName="email">
     <input type="password" formControlName="password">
-    <button type="submit">Submit</button>
+    <button class="button is-primary" type="submit" [disabled]="registrationForm.invalid">Submit</button>
   </form>
 </div>
