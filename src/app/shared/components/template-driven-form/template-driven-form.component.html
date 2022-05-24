@@ -1,5 +1,5 @@
 <div class="d-flex is-justify-content-center">
-  <form #productForm="ngForm">
+  <form #productForm="ngForm" (ngSubmit)="onSubmit(product)">
     <div class="field">
       <label class="label">Name</label>
       <div class="control">
@@ -7,13 +7,20 @@
           class="input"
           type="text"
           [(ngModel)]="product.name"
-          name="name">
+          name="name"
+          #name="ngModel"
+          required>
       </div>
+      <small *ngIf="name.pristine">Pristine field</small>
+      <small *ngIf="name.invalid">Invalid field</small>
     </div>
     <div class="field">
       <label class="label">Category</label>
       <div class="select">
-        <select [(ngModel)]="product.category" name="category">
+        <select
+          [(ngModel)]="product.category"
+          name="category"
+          #category="ngModel">
           <option
             *ngFor="let category of getCategories(productCategory | keyvalue)"
             [value]="category.key">
@@ -25,14 +32,24 @@
     <div class="field">
       <label class="label">Price</label>
       <div class="control">
-        <input class="input" type="number">
+        <input
+        class="input"
+        type="number"
+        [(ngModel)]="product.price"
+        name="price"
+        #price="ngModel">
       </div>
+      <small *ngIf="price.invalid">Invalid field</small>
     </div>
     <div class="field">
       <label class="label">Made in</label>
       <div class="select">
-        <select>
-          <option *ngFor="let country of countries">
+        <select
+          [(ngModel)]="product.madeIn"
+          name="madeIn">
+          <option
+            *ngFor="let country of countries"
+            [value]="country">
             {{ country }}
           </option>
         </select>
@@ -41,20 +58,38 @@
     <div class="field">
       <label class="label">Made on</label>
       <div class="control">
-        <input class="input" type="date">
+        <input
+          class="input"
+          type="date"
+          [(ngModel)]="product.madeOn"
+          name="madeOn">
       </div>
     </div>
     <div class="field">
       <label class="checkbox">
-        <input type="checkbox">
+        <input
+          type="checkbox"
+          [(ngModel)]="product.onPromotion"
+          name="onPromotion">
         On promotion
       </label>
     </div>
     <div class="field">
       <label class="label">Description</label>
       <div class="control">
-        <textarea class="textarea" rows="5"></textarea>
+        <textarea
+          class="textarea"
+          rows="5"
+          [(ngModel)]="product.description"
+          name="description">
+        </textarea>
       </div>
     </div>
+    <button
+      class="button is-primary"
+      type="submit"
+      [disabled]="productForm.invalid">
+      Submit
+    </button>
   </form>
 </div>

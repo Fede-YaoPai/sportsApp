@@ -45,4 +45,9 @@ export class ProductsService {
       ]
     );
   }
+
+  public addNewProduct(newProduct: Product): Observable<Product> {
+    return this.http
+      .post<Product>('https://my-url/api/products', newProduct);
+  }
 }

@@ -14,8 +14,8 @@ import { HoverPopupDirective } from './directives/hover-popup.directive';
 import { RedOnHoverDirective } from './directives/red-on-hover.directive';
 import { TemplateDrivenFormComponent } from './components/template-driven-form/template-driven-form.component';
 import { ReactiveFormComponent } from './components/reactive-form/reactive-form.component';
-import { FormsModule } from '@angular/forms';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PasswordStrengthDirective } from './directives/password-strength.directive';
 
 
 const sharedComponents = [
@@ -38,14 +38,16 @@ const sharedPipes = [
 const sharedDirectives = [
   FileUploadDirective,
   HoverPopupDirective,
-  RedOnHoverDirective
+  RedOnHoverDirective,
+  PasswordStrengthDirective
 ];
 
 @NgModule({
   declarations: [...sharedComponents, sharedPipes, sharedDirectives],
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports: [...sharedComponents, sharedPipes,sharedDirectives]
 })

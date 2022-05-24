@@ -1,1 +1,8 @@
-<p>reactive-form works!</p>
+<div class="d-flex is-justify-content-center">
+  <form [formGroup]="registrationForm" (ngSubmit)="onSubmit(registrationForm)">
+    <input type="text" formControlName="username">
+    <input type="email" formControlName="email">
+    <input type="password" formControlName="password">
+    <button type="submit">Submit</button>
+  </form>
+</div>
